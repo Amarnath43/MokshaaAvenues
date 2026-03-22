@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { COMPANY } from "../lib/data";
+import { Phone, CalendarCheck } from 'lucide-react';
 
 // 🔥 Variants
 const container = {
@@ -114,27 +115,29 @@ export default function PricingCTA() {
 
         {/* CTA Buttons */}
         <motion.div
-          variants={fadeUp}
-          className="flex justify-center gap-4 flex-wrap"
-        >
-          <motion.a
-            href={`tel:${COMPANY.phone}`}
-            whileHover={{ scale: 1.07 }}
-            whileTap={{ scale: 0.95 }}
-            className="btn-saffron"
-          >
-            📞 Call for Best Price
-          </motion.a>
+  variants={fadeUp}
+  className="flex justify-center gap-4 flex-wrap"
+>
+  <motion.a
+    href={`tel:${COMPANY.phone}`}
+    whileHover={{ scale: 1.07 }}
+    whileTap={{ scale: 0.95 }}
+    className="inline-flex items-center gap-2.5 bg-[#F4A820] text-[#1B4332] px-8 py-4 rounded-lg font-bold uppercase tracking-widest text-xs shadow-xl shadow-[#F4A820]/20"
+  >
+    <Phone size={16} strokeWidth={2.5} />
+    Call Now
+  </motion.a>
 
-          <motion.a
-            href="#contact"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="btn-forest-outline"
-          >
-            📋 Enquire Now
-          </motion.a>
-        </motion.div>
+  <motion.a
+    href="#contact"
+    whileHover={{ scale: 1.05 }}
+    whileTap={{ scale: 0.95 }}
+    className="inline-flex items-center gap-2.5 bg-[#F4A820] text-[#1B4332] px-8 py-4 rounded-lg font-bold uppercase tracking-widest text-xs shadow-xl shadow-[#F4A820]/20"
+  >
+    <CalendarCheck size={16} strokeWidth={2.5} />
+    Enquire Now
+  </motion.a>
+</motion.div>
       </motion.div>
     </section>
   );

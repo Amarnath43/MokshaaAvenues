@@ -5,16 +5,18 @@ import Image from "next/image";
 import logo from "../assets/logo.png";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   const navLinks = [
-    { name: "Highlights", href: "#highlights" },
-    { name: "Location", href: "#location" },
-    { name: "Features", href: "#features" },
-    { name: "Contact", href: "#contact" },
+    {name:"Home", href:"/"},
+    { name: "Highlights", href: "/#highlights" },
+    { name: "Location", href: "/#location" },
+    { name: "Features", href: "/#features" },
+    
   ];
 
   useEffect(() => {
@@ -69,12 +71,12 @@ export default function Navbar() {
         <ul className="hidden lg:flex gap-8 text-[11px] uppercase tracking-widest text-gray-500 font-bold">
           {navLinks.map((link) => (
             <li key={link.name}>
-              <a
+              <Link
                 href={link.href}
                 className="hover:text-[#1B4332] transition-colors duration-200"
               >
                 {link.name}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
@@ -85,7 +87,7 @@ export default function Navbar() {
             initial="hidden"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.96 }}
-            href="#contact"
+            href="/book-visit"
             className="hidden sm:block bg-[#F4A820] text-[#1B4332] px-5 py-2.5 text-[11px] font-black uppercase tracking-widest rounded-md"
           >
             Book Visit

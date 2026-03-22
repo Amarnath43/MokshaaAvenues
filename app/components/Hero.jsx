@@ -44,8 +44,6 @@ export default function Hero() {
   const [formData, setFormData] = useState({
     name: "",
     mobile: "",
-    plotSize: "Not Specified",
-    budget: "Not Specified",
   });
 
   const handleCallbackSubmit = (e) => {
@@ -54,11 +52,10 @@ export default function Hero() {
     const companyPhone = "917780579811";
 
     const message =
-      `*Hero Form Callback Request*%0A%0A` +
+      `*Callback Request*%0A%0A` +
       `*Name:* ${formData.name}%0A` +
       `*Mobile:* ${formData.mobile}%0A` +
-      `*Plot Size:* ${formData.plotSize}%0A` +
-      `*Budget:* ${formData.budget}`;
+      
 
     window.open(`https://wa.me/${companyPhone}?text=${message}`, "_blank");
   };
@@ -184,35 +181,7 @@ export default function Hero() {
               />
             </Field>
 
-            <div className="grid grid-cols-2 gap-4">
-              <Field label="Plot Size">
-                <select
-                  className={heroInputClasses}
-                  onChange={(e) =>
-                    setFormData({ ...formData, plotSize: e.target.value })
-                  }
-                >
-                  <option>Select size</option>
-                  <option>150 sq.yd</option>
-                  <option>200 sq.yd</option>
-                  <option>250 sq.yd +</option>
-                </select>
-              </Field>
 
-              <Field label="Budget">
-                <select
-                  className={heroInputClasses}
-                  onChange={(e) =>
-                    setFormData({ ...formData, budget: e.target.value })
-                  }
-                >
-                  <option>Select budget</option>
-                  <option>₹30L – ₹50L</option>
-                  <option>₹50L – ₹80L</option>
-                  <option>₹80L+</option>
-                </select>
-              </Field>
-            </div>
 
             <motion.button
               whileTap={{ scale: 0.96 }}
