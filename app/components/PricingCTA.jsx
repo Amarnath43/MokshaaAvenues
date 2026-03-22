@@ -129,7 +129,7 @@ export default function PricingCTA() {
   </motion.a>
 
   <motion.a
-    href="#contact"
+    href="/book-visit"
     whileHover={{ scale: 1.05 }}
     whileTap={{ scale: 0.95 }}
     className="inline-flex items-center gap-2.5 bg-[#F4A820] text-[#1B4332] px-8 py-4 rounded-lg font-bold uppercase tracking-widest text-xs shadow-xl shadow-[#F4A820]/20"

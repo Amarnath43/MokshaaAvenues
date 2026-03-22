@@ -93,15 +93,15 @@ export default function Footer() {
             <div className="flex flex-col gap-2 pt-2">
               <motion.a
                 whileHover={{ x: 4 }}
-                href="tel:+91XXXXX"
+                href={`tel:${COMPANY.phone}`}
                 className="text-white hover:text-[#B7E4C7] font-semibold"
               >
-                📞 Call: +91 XXXXX XXXXX
+                📞 Call: +91 90001 06220
               </motion.a>
 
               <motion.a
                 whileHover={{ x: 4 }}
-                href="https://wa.me/917780579811"
+                href={`https://wa.me/${COMPANY.phone}`}
                 className="text-white hover:text-[#B7E4C7] font-semibold"
               >
                 💬 WhatsApp Us

@@ -16,7 +16,7 @@ import {
 export const COMPANY = {
   name: 'Mokshaa Avenues Pvt. Ltd.',
   project: 'MND Avenue',
-  phone: '+917780579811',
+  phone: '+919000106220',
   email: 'info@mokshaaavenues.com',
   address: '12/A, MIGH, 1st Floor, SR Nagar, Hyderabad, Telangana',
   siteAddress: 'Near Medchal Bus Station, Medchal Court Road, Hyderabad',

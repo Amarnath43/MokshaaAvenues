@@ -28,7 +28,7 @@ export default function FloatBar() {
 
         {/* PRIMARY ACTION CTA */}
         <Link
-          href="#contact"
+          href="/book-visit"
           className="inline-flex items-center gap-2 bg-[#F4A820] hover:bg-[#e59a1c] text-[#1B4332] px-6 py-3 text-[10px] md:text-xs font-black tracking-widest uppercase rounded shadow-sm transition-transform active:scale-95"
         >
           <MapPin size={14} strokeWidth={3} />
