@@ -16,6 +16,9 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "MND Avenue | HMDA Approved Plots in Medchal",
+  icons: {
+    icon: '/favicon.png',
+  },
   description: "Premium villa plots at Athvelly, Medchal. HMDA approved layout with 30m Master Plan Road access.",
 };
 
