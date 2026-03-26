@@ -2,7 +2,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/NavBar";
 import Footer from "./components/Footer";
-import TopBar from "./components/TopBar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,9 +29,8 @@ export default function RootLayout({ children }) {
     >
       <body 
         className="min-h-full flex flex-col"
-        suppressHydrationWarning={true} // This fixes the browser extension error
+        suppressHydrationWarning={true} 
       >
-        <TopBar />
         <Navbar />
         {children}
         <Footer />

@@ -1,132 +1,109 @@
-"use client";
-
-import { motion } from "framer-motion";
+import Link from "next/link";
+import { Phone, MessageCircle } from "lucide-react";
 import { COMPANY } from "../lib/data";
+import logo from '../assets/logo.png'
+import Image from "next/image";
 
-const APPROVALS_TAGS = ["HMDA Approved", "TG RERA", "Bank Loan", "Vastu"];
-
-// 🔥 Variants
-const container = {
-  hidden: {},
-  show: {
-    transition: {
-      staggerChildren: 0.12,
-    },
-  },
-};
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 20 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, ease: "easeOut" },
-  },
-};
+const QUICK_LINKS = [
+  { label: "Home", href: "/" },
+  { label: "Highlights", href: "/#highlights" },
+  { label: "Features", href: "/#features" },
+  { label: "Location", href: "/#location" },
+  { label: "Completed Projects", href: "/#completed-projects" },
+  { label: "About", href: "/about" },
+];
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0D1B15] px-6 md:px-[60px] pt-20 pb-10">
-      <motion.div
-        variants={container}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
-        className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-[1200px] mx-auto mb-12"
-      >
-        {/* Brand Column */}
-        <motion.div variants={fadeUp}>
-          <div className="flex items-center gap-3 mb-5">
-            <motion.div
-              whileHover={{ scale: 1.1 }}
-              className="w-11 h-11 rounded-lg flex items-center justify-center text-xl bg-[#2D6A4F]"
-            >
-              🏡
-            </motion.div>
+    <footer className="bg-[#0D1B15] text-white px-6 sm:px-12 lg:px-[60px] py-14">
+      <div className="max-w-[1200px] mx-auto">
 
-            <div>
-              <div className="font-bold text-lg text-white font-serif leading-tight">
+        {/* TOP */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 pb-10 border-b border-white/10">
+
+          {/* BRAND */}
+          <div>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-11 h-11 rounded-lg bg-white flex items-center justify-center overflow-hidden">
+                <Image
+                  src={logo}
+                  alt="Mokshaa Avenues"
+                  className="w-8 h-8 object-contain"
+                />
+              </div>
+
+              <h3 className="font-serif text-lg font-bold">
                 {COMPANY.name}
-              </div>
-              <div className="text-[10px] tracking-[0.18em] uppercase text-[#B7E4C7]">
-                MND Avenue, Medchal
-              </div>
+              </h3>
             </div>
+
+            <p className="text-sm text-white/60 leading-relaxed max-w-[280px]">
+              HMDA approved villa plots in Medchal, Hyderabad — planned for
+              long-term value and future growth.
+            </p>
           </div>
 
-          <p className="text-sm leading-relaxed mb-6 max-w-[300px] text-white/40">
-            Premium HMDA-approved villa plots at Medchal, Hyderabad. Building
-            dreams, one plot at a time. Trusted by hundreds of families.
+          {/* QUICK LINKS */}
+          <div>
+            <h4 className="text-[11px] font-bold tracking-[0.2em] uppercase mb-4 text-[#95D5B2]">
+              Quick Links
+            </h4>
+
+            <ul className="space-y-2">
+              {QUICK_LINKS.map((link) => (
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-white/60 hover:text-white transition"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* CONTACT */}
+          <div>
+            <h4 className="text-[11px] font-bold tracking-[0.2em] uppercase mb-4 text-[#95D5B2]">
+              Contact
+            </h4>
+
+            <div className="space-y-3 text-sm text-white/60">
+              <p>SR Nagar, Hyderabad</p>
+
+              <a
+                href={`tel:${COMPANY.phone}`}
+                className="flex items-center gap-2 hover:text-white transition"
+              >
+                <Phone size={14} />
+                +91 90001 06220
+              </a>
+
+              <a
+                href={`https://wa.me/${COMPANY.phone}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 hover:text-white transition"
+              >
+                <MessageCircle size={14} />
+                WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* BOTTOM */}
+        <div className="pt-6 text-xs text-white/35 flex flex-col md:flex-row justify-between gap-2">
+          <p>
+            © {new Date().getFullYear()} {COMPANY.name}
           </p>
 
-          {/* Tags */}
-          <motion.div
-            variants={container}
-            className="flex gap-2 flex-wrap"
-          >
-            {APPROVALS_TAGS.map((tag) => (
-              <motion.span
-                key={tag}
-                variants={fadeUp}
-                whileHover={{ scale: 1.05 }}
-                className="text-[9px] font-bold tracking-widest uppercase px-3 py-1.5 rounded bg-[#40916C]/10 border border-[#40916C]/30 text-[#B7E4C7]"
-              >
-                {tag}
-              </motion.span>
-            ))}
-          </motion.div>
-        </motion.div>
-
-        {/* Contact Column */}
-        <motion.div variants={fadeUp}>
-          <h4 className="text-[11px] font-bold tracking-[0.2em] uppercase mb-6 text-[#95D5B2]">
-            Contact
-          </h4>
-
-          <div className="text-sm text-white/40 space-y-4">
-            <address className="not-italic leading-relaxed">
-              12/A MIGH, 1st Floor<br />
-              SR Nagar, Hyderabad<br />
-              Telangana, India
-            </address>
-
-            <div className="flex flex-col gap-2 pt-2">
-              <motion.a
-                whileHover={{ x: 4 }}
-                href={`tel:${COMPANY.phone}`}
-                className="text-white hover:text-[#B7E4C7] font-semibold"
-              >
-                📞 Call: +91 90001 06220
-              </motion.a>
-
-              <motion.a
-                whileHover={{ x: 4 }}
-                href={`https://wa.me/${COMPANY.phone}`}
-                className="text-white hover:text-[#B7E4C7] font-semibold"
-              >
-                💬 WhatsApp Us
-              </motion.a>
-            </div>
-          </div>
-        </motion.div>
-      </motion.div>
-
-      {/* Bottom Bar */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="max-w-[1200px] mx-auto pt-8 border-t border-white/5 flex flex-wrap justify-between items-center gap-4"
-      >
-        <div className="text-xs text-white/30">
-          © {new Date().getFullYear()} {COMPANY.name}. All rights reserved.
+          <p>
+            HMDA Approved • TG RERA Registered
+          </p>
         </div>
-
-        <div className="text-xs text-white/30 italic">
-          HMDA L.P: {COMPANY.hmda} | TG RERA Registered
-        </div>
-      </motion.div>
+      </div>
     </footer>
   );
 }

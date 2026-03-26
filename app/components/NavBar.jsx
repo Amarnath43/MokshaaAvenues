@@ -14,9 +14,10 @@ export default function Navbar() {
   const navLinks = [
     {name:"Home", href:"/"},
     { name: "Highlights", href: "/#highlights" },
-    { name: "Location", href: "/#location" },
     { name: "Features", href: "/#features" },
-    
+    { name: "Location", href: "/#location" },
+    {name:'Completed Projects', href:'/#completed-projects'},
+    { name: "About", href: "/about" },
   ];
 
   useEffect(() => {
@@ -87,10 +88,10 @@ export default function Navbar() {
             initial="hidden"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.96 }}
-            href="/book-visit"
+            href="/contact"
             className="hidden sm:block bg-[#F4A820] text-[#1B4332] px-5 py-2.5 text-[11px] font-black uppercase tracking-widest rounded-md"
           >
-            Book Visit
+            Enquire Now
           </motion.a>
 
           {/* MOBILE BUTTON */}

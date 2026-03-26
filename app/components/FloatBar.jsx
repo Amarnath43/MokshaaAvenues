@@ -1,40 +1,31 @@
-'use client'
-
-import { COMPANY } from '../lib/data'
-import Link from 'next/link'
-import { Phone, MapPin } from 'lucide-react'
+import { COMPANY } from "../lib/data";
+import Link from "next/link";
+import { Phone } from "lucide-react";
 
 export default function FloatBar() {
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 flex flex-col md:flex-row items-center justify-between gap-3 px-5 md:px-10 py-3 md:py-4 bg-[#1B4332]/95 backdrop-blur-md border-t border-white/10 shadow-[0_-4px_30px_rgba(0,0,0,0.25)]">
-
-      {/* TEXT: Highlights project name and HMDA status */}
-      <p className="text-xs md:text-sm text-white/80 text-center md:text-left">
-        <span className="text-white font-bold">MND Avenue @ Medchal</span> — 
-        Premium HMDA Villa Plots | Limited Units Left
-      </p>
-
-      {/* BUTTONS: High-contrast CTA for mobile and desktop */}
-      <div className="flex gap-2 md:gap-3 flex-wrap justify-center">
+    <div className="fixed bottom-0 left-0 right-0 z-50 border-t border-white/10 bg-[#123524]/95 backdrop-blur-md shadow-[0_-6px_24px_rgba(0,0,0,0.22)]">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 py-2.5 flex items-center justify-between gap-3">
         
-        {/* SECONDARY CALL CTA */}
-        <Link
-          href={`tel:${COMPANY.phone}`}
-          className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/25 text-white px-5 py-3 text-[10px] md:text-xs font-bold tracking-widest uppercase rounded transition-colors duration-200"
-        >
-          <Phone size={14} strokeWidth={2.5} />
-          Call Now
-        </Link>
+        {/* TEXT - desktop only */}
+        <div className="hidden md:block">
+          <p className="text-sm text-white/75 leading-none">
+            <span className="text-white font-semibold">MND Avenue @ Medchal</span>{" "}
+            • HMDA Approved Villa Plots
+          </p>
+        </div>
 
-        {/* PRIMARY ACTION CTA */}
-        <Link
-          href="/book-visit"
-          className="inline-flex items-center gap-2 bg-[#F4A820] hover:bg-[#e59a1c] text-[#1B4332] px-6 py-3 text-[10px] md:text-xs font-black tracking-widest uppercase rounded shadow-sm transition-transform active:scale-95"
-        >
-          <MapPin size={14} strokeWidth={3} />
-          Book Site Visit
-        </Link>
+        {/* CALL BUTTON */}
+        <div className="flex w-full md:w-auto">
+          <Link
+            href={`tel:${COMPANY.phone}`}
+            className="w-full md:w-auto inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/8 px-5 py-2.5 text-[11px] font-bold uppercase tracking-[0.16em] text-white transition hover:bg-white/15"
+          >
+            <Phone size={15} strokeWidth={2.4} />
+            Call Now
+          </Link>
+        </div>
       </div>
     </div>
-  )
+  );
 }
