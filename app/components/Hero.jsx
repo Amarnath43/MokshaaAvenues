@@ -101,7 +101,7 @@ export default function Hero() {
             <motion.a
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
-              href="#contact"
+              href="/contact"
               className="bg-[#F4A820] text-[#1B4332] px-8 py-4 rounded-xl font-bold uppercase tracking-widest text-xs shadow-xl shadow-[#F4A820]/20"
             >
               Contact Us
