@@ -41,7 +41,7 @@ export default function ContactForm() {
             });
 
             const result = await res.json();
-console.log(result);
+            console.log(result);
             if (res.ok && result.success) {
                 toast.success(result.message || "Form submitted successfully");
                 setForm({ name: "", phone: "", email: "", message: "" });
@@ -51,7 +51,7 @@ console.log(result);
         } catch (error) {
             toast.error("Network error. Please try again.");
         }
-        finally{
+        finally {
             setLoading(false);
         }
     };
@@ -129,9 +129,12 @@ console.log(result);
                     whileTap={{ scale: 0.98 }}
                     whileHover={{ scale: 1.01 }}
                     type="submit"
-                    className="w-full bg-[var(--forest,#1B4332)] hover:bg-[#2D6A4F] text-white py-3 text-[0.82rem] font-bold tracking-[0.18em] uppercase rounded-xl transition-all"
+                    disabled={loading}
+
+                    className="w-full bg-[var(--forest,#1B4332)] hover:bg-[#2D6A4F] text-white py-3 text-[0.82rem] font-bold tracking-[0.18em] uppercase rounded-xl transition-all  disabled:opacity-70 
+                    disabled:cursor-not-allowed"
                 >
-                    {loading ? <ImSpinner2  className="animate-spin mx-auto font-bold" size={20} /> : "Submit Enquiry"}
+                    {loading ? <ImSpinner2 className="animate-spin mx-auto font-bold" size={20} /> : "Submit Enquiry"}
                 </motion.button>
             </form>
 
