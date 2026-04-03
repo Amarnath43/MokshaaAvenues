@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import toast from "react-hot-toast";
+import { ImSpinner2 } from "react-icons/im";
 
 
 export default function ContactForm() {
@@ -24,9 +25,11 @@ export default function ContactForm() {
         email: "",
         message: "",
     });
+    const [loading, setLoading] = useState(false);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setLoading(true);
 
         try {
             const res = await fetch("/api/contact", {
@@ -47,6 +50,9 @@ console.log(result);
             }
         } catch (error) {
             toast.error("Network error. Please try again.");
+        }
+        finally{
+            setLoading(false);
         }
     };
 
@@ -125,7 +131,7 @@ console.log(result);
                     type="submit"
                     className="w-full bg-[var(--forest,#1B4332)] hover:bg-[#2D6A4F] text-white py-3 text-[0.82rem] font-bold tracking-[0.18em] uppercase rounded-xl transition-all"
                 >
-                    Submit Enquiry
+                    {loading ? <ImSpinner2  className="animate-spin mx-auto font-bold" size={20} /> : "Submit Enquiry"}
                 </motion.button>
             </form>
 
