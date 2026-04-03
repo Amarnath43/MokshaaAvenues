@@ -130,7 +130,7 @@ export default function Navbar() {
             <motion.span
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.96 }}
-              className="inline-block bg-[#F4A820] text-[#1B4332] px-5 py-2.5 text-[11px] font-black uppercase tracking-widest rounded-md"
+              className="inline-block bg-[#F4A820] text-[#1B4332] px-5 py-2.5 text-[11px] font-black uppercase tracking-widest rounded-md max-lg:hidden"
             >
               Enquire Now
             </motion.span>
@@ -168,7 +168,7 @@ export default function Navbar() {
 
             <button
               onClick={() => handleNavClick("/contact")}
-              className="mt-4 bg-[#F4A820] text-[#1B4332] px-6 py-3 text-sm font-black uppercase tracking-widest rounded-md"
+              className="mt-4 bg-[#F4A820] text-[#1B4332] px-6 py-3 text-sm font-black uppercase tracking-widest rounded-md "
             >
               Enquire Now
             </button>

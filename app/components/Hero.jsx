@@ -27,7 +27,7 @@ export default function Hero() {
       {/* Accent Blur */}
       <div className={`absolute top-10 md:top-20 left-1/4 w-64 h-64 md:w-96 md:h-96 bg-[#F4A820]/8 rounded-full blur-[100px] md:blur-[120px] ${styles["animate-pulse-slow"]}`} />
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-12 md:py-20">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-8 md:py-12">
         <div className="max-w-5xl mx-auto text-center">
           {/* HMDA Badge */}
           <div className={`inline-flex items-center gap-2 bg-gradient-to-r from-[#F4A820]/25 to-[#F4A820]/10 border border-[#F4A820]/50 text-[#F4A820] px-3 sm:px-5 py-2 sm:py-2.5 rounded-full text-[10px] sm:text-[11px] font-bold tracking-wider uppercase mb-6 md:mb-8 backdrop-blur-sm ${styles["animate-fade-in-down"]}`}>
