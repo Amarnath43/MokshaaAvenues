@@ -6,7 +6,9 @@ import FeaturesSection from "./components/FeaturesSection";
 import LocationSection from "./components/LocationSection";
 import CompletedProjects from "./components/CompletedProjects";
 import YoutubeSection from "./components/YoutubeSection";
+import ContactForm from "./components/contact/Form";
 import FloatBar from "./components/FloatBar";
+
 
 export default function Home() {
   return (
@@ -19,7 +21,12 @@ export default function Home() {
       <LocationSection />
       <CompletedProjects />
       <YoutubeSection />
-      <FloatBar />
+      <div className="max-w-xl mx-auto py-4">
+        <ContactForm/>
+       
+      </div>
+       <FloatBar/>
+   
     </main>
   );
 }

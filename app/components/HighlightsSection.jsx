@@ -36,7 +36,7 @@ export default function HighlightsSection() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="text-center mb-[70px]"
+          className="text-center mb-[50px]"
         >
           <motion.div
             variants={fadeUp}

@@ -12,13 +12,16 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
 
   const navLinks = [
-    {name:"Home", href:"/"},
+    {name:"Home", href:"#home"},
     { name: "Highlights", href: "/#highlights" },
     { name: "Features", href: "/#features" },
     { name: "Location", href: "/#location" },
     {name:'Completed Projects', href:'/#completed-projects'},
     { name: "About", href: "/about" },
+
   ];
+
+  
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40);
@@ -114,14 +117,14 @@ export default function Navbar() {
             className="fixed inset-0 z-40 bg-white flex flex-col items-center justify-center gap-8 lg:hidden"
           >
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
                 className="text-2xl font-serif font-bold text-[#1B4332]"
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
           </motion.div>
         )}
