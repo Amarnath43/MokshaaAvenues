@@ -12,7 +12,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
 
   const navLinks = [
-    {name:"Home", href:"#home"},
+    {name:"Home", href:"/#home"},
     { name: "Highlights", href: "/#highlights" },
     { name: "Features", href: "/#features" },
     { name: "Location", href: "/#location" },
