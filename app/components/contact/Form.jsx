@@ -45,6 +45,11 @@ export default function ContactForm() {
             if (res.ok && result.success) {
                 toast.success(result.message || "Form submitted successfully");
                 setForm({ name: "", phone: "", email: "", message: "" });
+
+                window.gtag("event", "contact_form_submission", {
+                    form_name: "Contact Form",
+                })
+                
             } else {
                 toast.error(result.message || "Submission failed");
             }

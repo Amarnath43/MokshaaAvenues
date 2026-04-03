@@ -21,7 +21,7 @@ export default function Home() {
       <LocationSection />
       <CompletedProjects />
       <YoutubeSection />
-      <div className="max-w-lg mx-auto py-4">
+      <div className="max-w-sm mx-auto py-4">
         <ContactForm/>
        
       </div>
