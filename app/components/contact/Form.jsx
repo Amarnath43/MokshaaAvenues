@@ -62,7 +62,7 @@ export default function ContactForm() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.15 }}
-            className="bg-white rounded-2xl border border-[var(--border,#e5e7eb)] p-5 md:p-7 shadow-xl shadow-[#1b43320f] order-1 lg:order-2"
+            className="bg-white rounded-2xl border border-[var(--border,#e5e7eb)] p-5 md:p-7 shadow-xl shadow-[#1b43320f] order-1 lg:order-2 "
         >
             <h3 className="font-bold text-3xl mb-2 font-serif text-[var(--forest,#1B4332)]">
                 Send an Enquiry
