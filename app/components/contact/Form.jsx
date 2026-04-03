@@ -38,14 +38,15 @@ export default function ContactForm() {
             });
 
             const result = await res.json();
-
-            toast.success(result.message);
-
-            if (res.ok) {
+console.log(result);
+            if (res.ok && result.success) {
+                toast.success(result.message || "Form submitted successfully");
                 setForm({ name: "", phone: "", email: "", message: "" });
+            } else {
+                toast.error(result.message || "Submission failed");
             }
         } catch (error) {
-            toast.error(error.message || "Something went wrong. Please try again.");
+            toast.error("Network error. Please try again.");
         }
     };
 
