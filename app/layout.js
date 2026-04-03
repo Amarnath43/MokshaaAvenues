@@ -29,16 +29,16 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body 
+      <body
         className="min-h-full flex flex-col"
-        suppressHydrationWarning={true} 
+        suppressHydrationWarning={true}
       >
         <Navbar />
         {children}
-          <Toaster position="top-right" offset={90} richColors /> // Global toast container , off
+        <Toaster position="bottom-center" richColors />
         <Footer />
       </body>
-      <GoogleAnalytics gaId="G-DPWZ8Y9BC5"/>
+      <GoogleAnalytics gaId="G-DPWZ8Y9BC5" />
     </html>
   );
 }
