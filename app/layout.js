@@ -35,7 +35,7 @@ export default function RootLayout({ children }) {
       >
         <Navbar />
         {children}
-          <Toaster position="top-right" />
+          <Toaster position="top-right" offset={90} richColors /> // Global toast container , off
         <Footer />
       </body>
       <GoogleAnalytics gaId="G-DPWZ8Y9BC5"/>
